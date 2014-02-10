@@ -298,7 +298,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
          options:options
          animations:^{
              [self setNeedsStatusBarAppearanceUpdateIfSupported];
-             [self.centerContainerView setFrame:newFrame];
+             //[self.centerContainerView setFrame:newFrame];
              [self updateDrawerVisualStateForDrawerSide:visibleSide percentVisible:0.0];
          }
          completion:^(BOOL finished) {
@@ -475,7 +475,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
          delay:0.0
          options:UIViewAnimationOptionCurveEaseInOut
          animations:^{
-             [self.centerContainerView setFrame:newCenterRect];
+             //[self.centerContainerView setFrame:newCenterRect];
              [sideDrawerViewController.view setFrame:self.childControllerContainerView.bounds];
          }
          completion:^(BOOL finished) {
@@ -483,7 +483,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
              CGRect oldCenterRect = self.centerContainerView.frame;
              [self setCenterViewController:newCenterViewController animated:animated];
              [oldCenterViewController endAppearanceTransition];
-             [self.centerContainerView setFrame:oldCenterRect];
+             //[self.centerContainerView setFrame:oldCenterRect];
              [self updateDrawerVisualStateForDrawerSide:self.openSide percentVisible:1.0];
              [self.centerViewController beginAppearanceTransition:YES animated:animated];
              [sideDrawerViewController beginAppearanceTransition:NO animated:animated];
@@ -492,12 +492,12 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
              delay:MMDrawerDefaultFullAnimationDelay
              options:UIViewAnimationOptionCurveEaseInOut
              animations:^{
-                 [self.centerContainerView setFrame:self.childControllerContainerView.bounds];
+                 //[self.centerContainerView setFrame:self.childControllerContainerView.bounds];
                  [self updateDrawerVisualStateForDrawerSide:self.openSide percentVisible:0.0];
              }
              completion:^(BOOL finished) {
-                 [self.centerViewController endAppearanceTransition];
-                 [self.centerViewController didMoveToParentViewController:self];
+                 //[self.centerViewController endAppearanceTransition];
+                 //[self.centerViewController didMoveToParentViewController:self];
                  [sideDrawerViewController endAppearanceTransition];
                  [self resetDrawerVisualStateForDrawerSide:self.openSide];
 
@@ -556,7 +556,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
          delay:0.0
          options:UIViewAnimationOptionCurveEaseInOut
          animations:^{
-             [self.centerContainerView setFrame:newCenterRect];
+             //[self.centerContainerView setFrame:newCenterRect];
              [sideDrawerViewController.view setFrame:sideDrawerViewController.mm_visibleDrawerFrame];
          }
          completion:^(BOOL finished) {
